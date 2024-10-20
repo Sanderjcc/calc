@@ -13,112 +13,80 @@ body{
 
 }
 
+/* eslitilizando calculadora */
 div#calculator{
     display: grid;
     grid-template-rows: 1fr 2fr;
-    background-color: #FF9D3D;
+    background-color: #816986;
     border-radius: 5%;
-    padding: 5px;
-
 
     min-height: 500px;
     min-width: 300px;
 
     box-shadow: 1px 1px 10px 2px #00000046;
+
 }
 
+p#secretMsg{
+    /* Alinhando o texto no centro */
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+
+    /* estilizando o texto */
+    font: normal bold 1.5em Helvetica, sans-serif;
+    color: #d6d6d6;
+    text-shadow: 2px 2px 2px #00000048;
+    
+}
+
+/* estilizando visor */
 input#screen{
     height: 100%;
-    width: 100%;
+    width: 99%;
+    border-radius: 13px;
+    background-color: transparent;
+    border: 0px;
 
-    padding
 }
 
+/* estilizando area dos botoes */
 section.inputArea{
-    box-shadow: 0px -2px 3px 3px #0000001e;
-    background-color: #3b3b3b;
-    border-radius: 30px 30px 10px 10px;
-    display: grid;
-    margin: -5px;
+    transition-duration: 0.5s;
 
-    padding: 10px 5px 20px 5px;
-    /* grid style daddy */
-    /* amount of columns*/
+    /* mudanaças exclusivamente visuais, ou seja, de rederização */
+    transform: scaleY(0);
+    transform-origin: bottom;
+
+    /* estilo do display */
+    display: grid;
+    gap: 6px 5px;
     grid-template-columns: repeat(4, 2fr);
     grid-template-rows:  repeat(5, 2fr);
-    /* space between lines and columns:
-    gap:
-    row-gap: 
-    column-gap:
-     */
-    gap: 6px 5px;
 
-    /* grid-templet-rows: height of each row */
-    /* values: px, auto and fr */
-    /* repeat(amount, width) */
-    /* minmax(minWidth, maxWidth) */
-    /* repeat(amount, minmax(minWidth, maxWidth)) */
+    /* estilização do elemento */
+    background-color: #3b3b3b;
+    border-radius: 30px 30px 5% 5%;
+    padding: 10px 5px 20px 5px;
+    box-shadow: 0px -2px 3px 3px #0000001e;
 
-    /* 
-    ===================== align itens ==================================== 
-    justify-items: aligns elements in their own cells
-    align-items: aligns elements in their own cells
-    place-items: align-items + justify-items
+}
 
-    justify-content: align X all the elements in theirs containers
-    align-content: align Y all the elements in theirs containers
-
-    justify-self
-    align-self
-
-
-
-    ==================== grid-areas !== grid-template ======================================
-    -> in container:
-        grid-template-areas:
-        'x y' first line have two columns with x and y elements
-        'y y' second line have two columns with one element (y) occuped 2 cels
-        'z' third line
-        '...'
-        ;
-
-    -> in element:
-        grid-area:'x'; this elemtent is the x element
-
-
-
-    ==================== pos elements =========================================================
-        grid-column: the column of element;
-        grid-column: span 2; occupies all columns up to the second
-
-        grid-row: the row of element;
-        grid-row: span 2; occupies all rows up to the second
-
-    */
-
-
+div#calculator:hover section.inputArea{
+    transition-duration: 0.5s;
+    transform: scaleY(1);
+    
 }
 
 button.buttonInput{
     height: 100%;
-    width: 100%;
+    width: 85%;
     border-radius: 50%;
     color: white;
     background-color: #3b3b3b00;
     border: 0px solid #00000000;
-
-
-
     font-size: 1.2em;
 }
-
-button.buttonInput:hover{
-    background-color: #ffffff0a;
-
-    transition-duration: 0.5s;
-}
-
-
 
 button.equalButton{
     grid-column: 3 / 5 ;
@@ -126,3 +94,15 @@ button.equalButton{
     width: 100%;
 
 }
+
+button.buttonInput:hover{
+    background-color: #ffffff0a;
+    transition-duration: 0.3s;
+}
+
+button.buttonInput:active{
+    background-color: #fdfdfd41;
+    color: #ce66ce;
+}
+
+
