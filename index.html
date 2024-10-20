@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="calculator">
+        <section class="outputArea" >
+            <input type="number" id="screen" disabled>
+        </section>
+         <section class="inputArea">
+                <!-- action buttons -->
+                <button class="buttonInput" onClick="cleanAll()">C</button>
+                <button class="buttonInput operator" onClick="addValue('%')">%</button>
+                <button class="buttonInput operator" onClick="addValue('/')">/</button>
+                <button class="buttonInput" onClick="backspace()"> &lt;- </button> 
+
+                <button class="buttonInput " onClick="addValue('7')">7</button>
+                <button class="buttonInput " onClick="addValue('8')">8</button>
+                <button class="buttonInput " onClick="addValue('9')">9</button>
+                <button class="buttonInput operator" onClick="addValue('*')">x</button> 
+
+                <button class="buttonInput " onClick="addValue('4')">4</button>
+                <button class="buttonInput " onClick="addValue('5')">5</button>
+                <button class="buttonInput " onClick="addValue('6')">6</button>
+                <button class="buttonInput operator" onClick="addValue('-')">-</button> 
+
+                <button class="buttonInput " onClick="addValue('1')">1</button>
+                <button class="buttonInput " onClick="addValue('2')">2</button>
+                <button class="buttonInput " onClick="addValue('3')">3</button>
+                <button class="buttonInput operator" onClick="addValue('+')">+</button> 
+
+                <button class="buttonInput " onClick="addValue('0')">0</button>
+                <button class="buttonInput " onClick="addValue('.')">.</button>
+                <button class="buttonInput equalButton" onClick="addValue()">=</button> 
+            </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
